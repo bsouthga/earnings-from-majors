@@ -78,7 +78,7 @@ class Chart {
       .attr({
         cx : d => x(d.value),
         cy : dy/2,
-        r: 3
+        r: 4
       })
 
     row.append('text')
