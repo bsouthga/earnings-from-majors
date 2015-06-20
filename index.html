@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Income and Major Choice</title>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:700,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <style>
+
+    body {
+      text-align: center;
+    }
+
+    text {
+      font-size: 8pt;
+    }
+
+    line {
+      stroke: #aaa;
+    }
+
+    circle {
+      stroke: #333;
+      fill: #fff;
+      stroke-width: 1px;
+    }
+
+    .container {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .x.grid .domain,
+    .x.grid line {
+      fill : none;
+      stroke: none;
+    }
+
+    .x.grid .tick line {
+      stroke: #ccc;
+      stroke-dasharray: 3,3;
+    }
+
+    .x.grid .tick:first-child line {
+      stroke: #000;
+      stroke-dasharray: none;
+    }
+
+    #chart {
+      width: 100%;
+      height: 600px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h4>Expected Earnings</h4>
+  <div id="chart"></div>
+  <script src="bundle.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-54214517-3', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</body>
+</html>
