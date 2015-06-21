@@ -1,7 +1,7 @@
 import "babel/polyfill";
 import d3 from 'd3';
 import _ from 'lodash';
-import pym from 'pym';
+import pym from 'pym.js';
 
 let data = _.sortBy([
   {subject: "Architecture and Engineering", value: 83000},
@@ -102,5 +102,7 @@ class Chart {
 
 
 let c = (new Chart({data, id: '#chart'})).draw();
-new pym.Child({renderCallback: ::c.draw});
+let renderCallback = _.debouce(::c.draw, 50);
+new pym.Child({renderCallback});
+
 
