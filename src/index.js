@@ -102,7 +102,7 @@ class Chart {
 
 
 let c = (new Chart({data, id: '#chart'})).draw();
-let renderCallback = _.debouce(::c.draw, 50);
+let renderCallback = _.debounce(::c.draw, 50);
 new pym.Child({renderCallback});
 
 
