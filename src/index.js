@@ -7,16 +7,15 @@ let data = _.sortBy([
   {subject: "Architecture and Engineering", value: 83000},
   {subject: "Arts", value: 49000},
   {subject: "All Bachelor's Degrees", value: 61000},
-  {subject: "Biolog", value: 56000},
+  {subject: "Biology", value: 56000},
   {subject: "Business", value: 65000},
-  {subject: "Communications and Journalis", value: 54000},
-  {subject: "Computer Science, Statistics, And Math", value: 76000},
+  {subject: "Communications and Journalism", value: 54000},
+  {subject: "Computer Science, Statistics, and Math", value: 76000},
   {subject: "Humanities", value: 52000},
   {subject: "Physical Science", value: 65000},
   {subject: "Health", value: 65000},
-  {subject: "Law And Public Polic", value: 54000}
+  {subject: "Law and Public Policy", value: 54000}
 ], 'value');
-
 
 class Chart {
 
