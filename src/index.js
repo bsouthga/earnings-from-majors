@@ -3,6 +3,24 @@ import d3 from 'd3';
 import _ from 'lodash';
 import pym from 'pym.js';
 
+let params = () => {
+  return window
+    .location
+    .search
+    .slice(1)
+    .split("&")
+    .reduce((o, v) => {
+      let [key, value] = v.split("=");
+      o[key] = value;
+      return o;
+    }, {})
+}
+
+if (params().noSource) {
+  d3.select('.source').remove();
+}
+
+
 let data = _.sortBy([
   {subject: "Architecture and Engineering", value: 83000},
   {subject: "Arts", value: 49000},
@@ -32,7 +50,9 @@ class Chart {
 
     let bb = this.container.node().getBoundingClientRect();
 
-    let margin = { top: 50, right: 200, bottom: 10, left: 30 },
+    let smallScreen = bb.width < 500;
+
+    let margin = { top: 50, right: (smallScreen ? 60 : 200), bottom: 10, left: 30 },
         width = bb.width - margin.left - margin.right,
         height = bb.height - margin.top - margin.bottom;
 
@@ -86,10 +106,16 @@ class Chart {
         x : function(d) {
           let {width} = this.getBBox();
           let xval = x(d.value);
+          if (smallScreen) {
+            return 10;
+          }
           return d.value < 0 ? (xval - width - 10) : (xval + 10);
         },
         y : function(d) {
           let {height} = this.getBBox();
+          if (smallScreen) {
+            return dy/2 - height/2;
+          }
           return dy/2 + height/4;
         }
       })
