@@ -28,15 +28,15 @@ if (params().noSource) {
 
 let data = _.sortBy([
   {subject: "Architecture and Engineering", value: 83000},
-  {subject: "Arts", value: 49000},
+  {subject: "Visual and Performing Arts", value: 49000},
   {subject: "All Bachelor's Degrees", value: 61000},
   {subject: "Biology", value: 56000},
   {subject: "Business", value: 65000},
   {subject: "Communications and Journalism", value: 54000},
   {subject: "Computer Science, Statistics, and Math", value: 76000},
   {subject: "Humanities", value: 52000},
-  {subject: "Physical Science", value: 65000},
-  {subject: "Health", value: 65000},
+  {subject: "Physics and Chemistry", value: 65000},
+  {subject: "Medicine and Nursing", value: 65000},
   {subject: "Law and Public Policy", value: 54000}
 ], 'value');
 
@@ -152,5 +152,3 @@ class Chart {
 let c = (new Chart({data, id: '#chart'})).draw();
 let renderCallback = _.debounce(::c.draw, 50);
 new pym.Child({renderCallback});
-
-
